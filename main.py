@@ -2,8 +2,8 @@ from turtle import Turtle, Screen
 import random
 
 timmy = Turtle()
-timmy.shape("turtle")
 timmy.color("forest green")
+timmy.speed(0)
 
 #drawing a square
 """for i in range(0,4):
@@ -31,7 +31,7 @@ for shapes in sides:
         timmy.forward(100)"""
 
 #random walk program
-timmy.pensize(5)
+"""timmy.pensize(5)
 direction = [0, 90, 180, 270]
 count = 0
 for _ in range(0,200):
@@ -40,9 +40,16 @@ for _ in range(0,200):
     b = random.random()
     timmy.pencolor((r,g,b))
     timmy.seth(random.choice(direction))
-    timmy.forward(20)
+    timmy.forward(20)"""
 
-
+#Draw a spirograph
+"""for _ in range(72):
+    r = random.random()
+    g = random.random()
+    b = random.random()
+    timmy.pencolor((r, g, b))
+    timmy.circle(100)
+    timmy.rt(5)"""
 
 screen = Screen()
 screen.exitonclick()
