@@ -1,9 +1,11 @@
 from turtle import Turtle, Screen
 import random
+import colorgram
 
 timmy = Turtle()
 timmy.color("forest green")
 timmy.speed(0)
+screen = Screen()
 
 #drawing a square
 """for i in range(0,4):
@@ -51,5 +53,44 @@ for _ in range(0,200):
     timmy.circle(100)
     timmy.rt(5)"""
 
-screen = Screen()
+#Hirsch painting
+screen.colormode(255)
+timmy.penup()
+color_list = []
+count = 0
+colors = colorgram.extract("hirstspotpainting.png", 10)
+
+for i in range(10):
+    temp_colors = colors[i]
+    color_code = temp_colors.rgb
+    color_list.append((color_code.r,color_code.g,color_code.b))
+
+
+y_set = -300
+x_set = -300
+timmy.goto(x_set,y_set)
+displace = 40
+
+for y in range(16):
+    for x in range(16):
+        timmy.color(random.choice(color_list))
+        timmy.begin_fill()
+        timmy.circle(10)
+        timmy.end_fill()
+        x_set += displace
+        timmy.goto(x_set,y_set)
+    y_set += displace
+    x_set = -300
+    timmy.goto(x_set, y_set)
+
+
+
+
+#move to point
+#draw circle
+#fill color
+
+
+
+
 screen.exitonclick()
